@@ -53,13 +53,7 @@ def main():
     client = mqtt.Client()
     client.connect(broker, port, 60)
 
-    while True:
-        temperature = generate_temperature()
-        humidity = generate_humidity()
-
-        # Simulate random total failure (0.5% chance)
-        if random.random() < 0.005:
-            print("Simulierter Totalausfall")
+    while True
             break
 
         data = create_data_payload(station_id, temperature, humidity)
