@@ -53,8 +53,7 @@ def main():
     client = mqtt.Client()
     client.connect(broker, port, 60)
 
-    while True:
-        temperature = generate_temperature()
+    while True
         humidity = generate_humidity()
 
         # Simulate random total failure (0.5% chance)
