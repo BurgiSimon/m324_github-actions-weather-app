@@ -21,14 +21,14 @@ def generate_temperature():
     """Generate temperature reading with 2% chance of error sentinel value."""
     if random.random() < 0.02:
         return -999
-    return round(random.uniform(15, 30), 1)
+    return round(random.uniform(15, 45), 1)
 
 
 def generate_humidity():
     """Generate humidity reading with 2% chance of out-of-range error values."""
     if random.random() < 0.02:
         return round(random.uniform(-100, 200), 1)
-    return round(random.uniform(30, 60), 1)
+    return round(random.uniform(30, 100), 1)
 
 
 def create_data_payload(station_id, temperature, humidity):
@@ -37,7 +37,7 @@ def create_data_payload(station_id, temperature, humidity):
         "stationId": station_id,
         "temperature": temperature,
         "humidity": humidity,
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "timestamp": time.strftime("%m-%dT%H:%M:%SZ", time.gmtime()),
     }
 
 
